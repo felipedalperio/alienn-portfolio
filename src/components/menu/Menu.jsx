@@ -18,12 +18,15 @@ export default function Menu() {
 
         <div className="icons">
             <div className="circle">
+                <div className="light"></div>
                 <FaFacebookF />
             </div>
             <div className="circle">
+                <div className="light"></div>
                 <FaInstagram />
             </div>
             <div className="circle">
+                <div className="light"></div>
                 <FiGithub />
             </div>
         </div>

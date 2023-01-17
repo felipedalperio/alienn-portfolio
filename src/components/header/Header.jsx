@@ -25,7 +25,10 @@ export default function Header() {
                         <FiGithub/>
                     </div>
                 </div>
-                <button>SAIBA MAIS</button>
+                <button>
+                    <div className="light"></div>
+                    SAIBA MAIS
+                </button>
             </div>
         </div>
         <div className="alien">
