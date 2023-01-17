@@ -4,7 +4,7 @@
     top:0;
     background-color: #0f121e;
     height: 80px;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 95px);
     justify-content: space-between;
     padding: 0px 40px;
     align-items: center;
@@ -58,7 +58,7 @@
 }
 @media (max-width:661px) {
     .menu{
-        width: calc(100vw-20px);
+        width: calc(100vw - 55px);
         padding: 0 20px;
     }
 }
