@@ -59,8 +59,15 @@
 
 
 @media (max-width:661px) {
+    .footer .top{
+        flex-direction: column;
+        gap: 30px;
+    }
     .footer .bottom{
         padding: 0;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
     .footer .bottom span{
         text-align: center;

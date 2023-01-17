@@ -125,7 +125,7 @@ button .light {
 
 .groupButtons button:hover .light {
     background-color: #fff;
-    animation: lightButton .5s;
+    animation: lightButton 1s;
     animation-fill-mode: forwards;
 }
 
@@ -478,6 +478,6 @@ button .light {
     }
 
     100% {
-        transform: translateX(250px) translateY(-130px);
+        transform: translateX(300px) translateY(-130px);
     }
 }
