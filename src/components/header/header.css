@@ -1,0 +1,414 @@
+
+.header{
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../../public/images/night3.jpg');
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+ }
+ 
+ .info{
+     position: relative;
+     width: 50%;
+     left:60px;
+     top:10%;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     color:white;
+     
+ }
+ 
+ .info h1{
+     color:white;
+     font-size: 50px;
+     filter: drop-shadow(2px 2px 1px rgba(173, 250, 150, 0.7)); 
+     animation: splashY 1s;
+     animation-fill-mode: forwards;
+     margin: 0;
+ }
+ 
+ .info h3{
+     letter-spacing: 2px;
+     color:#adfa96;
+     font-size: 40px;
+     opacity: 0;
+     animation: splashY 1s;
+     animation-fill-mode: forwards;
+     animation-delay: 0.3s;
+     margin: 0;
+ }
+ 
+ .info span{
+     font-size: 20px;
+     letter-spacing: 1px;
+     animation: splashX 1.5s;
+     text-shadow: 1px 2px 1px black;
+     animation-fill-mode: forwards;
+ }
+ 
+ .icons{
+     display: flex;
+ }
+ 
+ .circleBack {
+     background-color: #0f121e;
+     border-radius: 30px;
+     height: 40px;
+     width: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-right: 20px;
+     color:#adfa96;
+     border: 1px solid #adfa96;
+     filter: drop-shadow(1px 1px 3px rgba(173, 250, 150, 0.7)); 
+     font-size: 16px;
+     opacity: 0;
+     animation: splashX 1s;
+     animation-fill-mode: forwards;
+     cursor: pointer;
+     transition: all .5s ease;
+ }
+ 
+ .circleBack:hover{ 
+     background-color: transparent;
+ }
+ 
+ .circleBack:nth-child(2){
+     animation-delay: 0.2s;
+ }
+ 
+ .circleBack:nth-child(3){
+     animation-delay: 0.4s;
+ }
+ 
+ .groupButtons{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .groupButtons button{
+     width: 300px;
+     border:none;
+     background-color: #0f121e;
+     color:#adfa96;
+     font-weight: bold;
+     border-radius: 4px;
+     padding: 10px 20px;
+     margin-right: 50px;
+     cursor: pointer;
+     font-size: 20px;
+     border: 2px solid rgba(173, 250, 150, 0.7);
+     filter: drop-shadow(12px 12px 7px rgba(173, 250, 150, 0.7)); 
+     animation: splashX 1.5s;
+     transition: all .5s ease;
+     
+ }
+ 
+ .groupButtons button:hover{
+     transform: scale(1.1);
+     background-color: #080c11;
+ }
+ 
+ .alien {
+     position: absolute;
+     right: 140px;
+     top: calc(40px);
+     animation: splashXLess 3s, alien 3s infinite 3s, pisk 1s infinite;
+ }
+ 
+ 
+ .alien .spaceship{
+     filter:brightness(40%) drop-shadow(12px 12px 7px rgba(173, 250, 150, 0.7)); 
+     animation: shipAnimation 4s infinite;
+     z-index: 4;
+     position: relative;
+ }
+ 
+ .alien .triangle-up {
+     position: relative;
+     top:-40px;
+     width: 100px;
+     height: 0;
+     border-left: 80px solid transparent;
+     border-right: 80px solid transparent;
+     border-bottom: 380px solid rgb(172, 252, 154,0.8);
+     animation: triangle 4s infinite, pisk 1s infinite;
+     z-index: 2;
+   }
+ 
+ .alien .car{
+     width: 300px;
+     position: absolute;
+     filter:brightness(50%) drop-shadow(4px 8px 10px rgba(173, 250, 150, 0.7));
+     top:340px;
+     right: 0px;
+     z-index: 3;
+     animation: car 4s infinite;
+ }
+ 
+ .alien .circle {
+     width: 240px;
+     height: 80px;
+     bottom:-20px;
+     left:10px;
+     position: absolute;
+     background: rgba(122, 169, 111, 0.8);
+     border-radius: 50%;
+     animation: circle 4s infinite;
+     filter: drop-shadow(4px 8px 10px rgba(173, 250, 150, 0.7));
+ }
+ 
+ .board {
+     position: absolute;
+     bottom: 12%;
+     left:200px;
+     opacity: 0;
+     animation: splashYLess 2s;
+     animation-fill-mode: forwards;
+     animation-delay: 0.3s;
+ }
+ 
+ .board img{
+     width: 200px;
+     filter:brightness(40%)  drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     animation: pisk2 1s infinite;
+ }
+ 
+ .poste{
+     position: absolute;
+     top: -10px;
+     right: 43%;
+     width: 15px;
+     height: 400px;
+     filter:brightness(80%)  drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     border-radius: 20px;
+     background-color: #5f5d5d;
+     border-right: 10px solid gray;
+     animation: pisk2 1s infinite;
+ }
+    
+ /* Animações */
+ 
+ @keyframes shipAnimation {
+     0%{
+         transform: translateY(-10%);
+     }
+     50%{
+         transform: translateY(10%);
+     }
+     100%{
+         transform: translateY(-10%);
+     }
+ }
+ @keyframes alien {
+     0%{
+         transform: translateX(0%) ;
+     }
+     50% {
+         transform: translateX(10%) ;
+     }
+     100%{
+         transform: translateX(0%) ;
+     }
+ }
+ 
+ @keyframes triangle {
+     0%{
+         transform: translateY(-10%);
+     }
+     50%{
+         transform: translateY(10%);
+         
+     }
+     100%{
+         transform: translateY(-10%);
+     }
+ }
+ @keyframes car {
+     0%{
+         transform: translateY(-10%) rotate(8deg) translateX(10%);
+     }
+     50%{
+         transform: translateY(100%) ;
+     }
+     100%{
+         transform: translateY(-10%) rotate(8deg) translateX(10%);
+     }
+ }
+ @keyframes circle {
+     0%{
+         width: 240px;
+     }
+     50%{
+         left: 50px;
+         height: 10px;
+         width: 140px;
+     }
+     100%{
+         width: 240px;
+     }
+ }
+ 
+ @keyframes pisk {
+     0%{
+         filter:drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     }
+     50%{
+         filter:drop-shadow(14px 3px 1px rgba(39, 244, 145, 0.7));;
+     }
+     100%{
+         filter:drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     }
+ }
+ 
+ @keyframes pisk2 {
+     0%{
+         filter:drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     }
+     50%{
+         filter:drop-shadow(8px 3px 4px rgba(39, 244, 145, 0.7));;
+     }
+     100%{
+         filter:drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));;
+     }
+ }
+ 
+ @keyframes splashX {
+     0%{
+         transform: translateX(-800%);
+     }
+     50%{
+         transform: translateX(10%) ;
+     }
+     100%{
+         opacity: 1;
+         transform: translateX(0%) ;
+     }
+ }
+ 
+ @keyframes splashXLess {
+     0%{
+         transform: translateX(800%);
+     }
+     50%{
+         transform: translateX(-10%) ;
+     }
+     100%{
+         transform: translateX(0%) ;
+     }
+ }
+ 
+ @keyframes splashY {
+     0%{
+         transform: translateY(-800%);
+     }
+     50%{
+         transform: translateY(10%) ;
+     }
+     100%{
+         transform: translateY(0%) ;
+         opacity: 1;
+     }
+ }
+ @keyframes splashYLess {
+     0%{
+         transform: translateY(800%);
+     }
+     50%{
+         opacity: 1;
+         transform: translateY(-10%);
+     }
+     100%{
+         opacity: 1;
+         transform: translateY(0%) ;
+     }
+ }
+ 
+ /* Responsividade */
+
+ @media  (max-width:1300px) {
+    .board{
+        display: none;
+    }
+ }
+ 
+ @media (max-width:991px) {
+     .board{
+         display: none;
+     }
+     .alien{
+         right: 10px;
+         top:20px
+     }
+     .alien .car{
+         display: none;
+     }
+     .groupButtons button{
+        font-size: 16px;
+     }
+
+     .info span:last-child{
+        display: none;
+     }
+
+     
+ }
+ 
+ @media (max-width:761px) {
+     .groupButtons{
+         flex-direction: column;
+         align-items: flex-start;
+     }
+     .groupButtons button{
+         margin-top: 10px;
+     }
+ }
+ 
+ @media (max-width:661px) {
+     .alien{
+         display: none;
+     }
+     .info{
+         width: 80%;
+         top:50%;
+         left:50%;
+         transform: translateY(-50%) translateX(-50%);
+         gap: 10px;
+     }
+
+     .header{
+        height: calc(90vh - 80px);
+     }
+
+     .info span{
+         text-shadow: 2px 2px 5px #000;
+         
+     }
+     .info h1{
+         font-size: 40px;
+     }
+     .info h3{
+         font-size: 25px;
+         text-shadow: 2px 2px 5px #000;    
+         padding-bottom: 40px;
+     }
+     .groupButtons button{
+         width: 100%;
+         margin-top: 20px;
+     }
+
+     .header{
+        background-image: url(../../../public/images/wallpaper_mobile1.jpg);
+    
+     }
+     
+ }
+ 
+ 

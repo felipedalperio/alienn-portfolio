@@ -1,0 +1,83 @@
+.duvidas{
+    display: flex;
+    color: white;
+    padding: 100px 0;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.left{
+    flex:1;
+}
+
+
+.right{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.right .titleDuvida{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    text-align: center;
+}
+.right .titleDuvida > span:last-child{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.greenColor{
+    color: #89D790;
+}
+
+.rightwrapperduvida{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+@media (max-width:991px) {
+    .left{
+        position: absolute;
+        top:0;
+        padding: 20px 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .left img{
+        filter:drop-shadow(3px 1px 4px rgba(173, 250, 150, 0.7));;
+    }
+
+    @media (max-width:991px) {
+        .right{
+            background-color: #090b13;
+            border-top: 4px solid #89D790;;
+            padding: 20px 0 80px 0;
+            z-index: 9;
+           
+            margin-top: 80px;
+        }
+        
+    }
+    
+}
+
+@media (max-width:661px) {
+
+    .right .titleDuvida{
+        font-size: 40px;
+    }
+
+    .right .titleDuvida > span:last-child{
+        font-size: 20px;
+        font-weight: 300;
+    }
+}

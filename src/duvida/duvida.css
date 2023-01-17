@@ -1,0 +1,45 @@
+.duvida{
+    display: flex;
+    background-color: #272D49;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    padding:  20px;
+    font-size: 18px;
+}
+
+.duvidaTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.duvidaContent{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #a3a3a3;
+    letter-spacing: 2px;
+    transition: all .2s ease;
+    
+}
+
+.duvidaTitle.duvRight{
+    flex:1;
+}
+.duvidaTitle .duvLeft{
+    flex:1;
+}
+
+
+@media (max-width:661px) {
+
+    .duvidaTitle{
+        font-size:18px;
+    }
+    .duvidaContent{
+        font-size: 16px;
+    }
+}
