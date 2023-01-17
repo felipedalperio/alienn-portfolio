@@ -57,20 +57,20 @@ export default function Contact() {
             <form>
                 <div className="first">
                     <div className="name">
-                        <input onChange={(e) => setName(e.target.value)} className='input' id="nome" type="text" autocomplete="off" required="true"/>
+                        <input onChange={(e) => setName(e.target.value)} className='input' id="nome" type="text" required/>
                         <label htmlFor="nome">nome</label>
                     </div>
                     <div className="telefone">
-                        <IMaskInput mask="+55 (00) 00000-0000" onChange={(e) => setTel(e.target.value)} className='input' id='telefone' autocomplete="off" required="true"/>
+                        <IMaskInput mask="+55 (00) 00000-0000" onChange={(e) => setTel(e.target.value)} className='input' id='telefone' required/>
                         <label htmlFor="telefone" ref={telRef}>telefone</label>
                     </div>
                 </div>
                 <div className="telefone">
-                    <input onChange={(e) => setEmail(e.target.value)} className='input' id='email' type="email" autocomplete="off" required="true" />
+                    <input onChange={(e) => setEmail(e.target.value)} className='input' id='email' type="email" required />
                     <label htmlFor="email" ref={emailRef}>email</label>
                 </div>
                 <div className="desc">
-                    <textarea onChange={(e) => setDesc(e.target.value)} id='desc' utocomplete="off" required="true" />
+                    <textarea onChange={(e) => setDesc(e.target.value)} id='desc' utocomplete="off" required />
                     <label htmlFor="desc" >Descrição do projeto</label>
                 </div>
                 <button><AiOutlineSend size={20}/> ENVIAR</button>
