@@ -13,6 +13,7 @@ export default function Contact() {
   const[name,setName] = useState("");
   const[tel,setTel] = useState("");
   const[desc,setDesc] = useState("");
+  const[showProfress,setShowProfress] = useState(false);
   const emailRef = useRef(null);
   const telRef = useRef(null);
   const form = useRef(null);
@@ -20,7 +21,7 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     //https://www.youtube.com/watch?v=I4DKr1JLC50
-
+    setShowProfress(true);
     if(email != "" && desc != "" && name != "" && tel != ""){
         if(email.split("").includes("@")){
             emailjs.sendForm('service_zlwqjiq', 'template_0yifm45', form.current, 'Odl7AKHDXonkGb0qm')
@@ -35,12 +36,14 @@ export default function Contact() {
                 setEmail("");
                 setName("");
                 setTel("");
+                setShowProfress(false);
             }, (error) => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Algo deu errado, Por favor tente novamente mais tarde.',
                 })
+                setShowProfress(false);
             });
         }else{
             Swal.fire({
@@ -48,6 +51,7 @@ export default function Contact() {
                 title: 'Oops...',
                 text: 'Por favor Digite um email valido.',
             })
+            setShowProfress(false);
         }
     }else{
         Swal.fire({
@@ -55,6 +59,7 @@ export default function Contact() {
             title: 'Oops...',
             text: 'Por favor preencha todos os campos do formulário.',
         })
+        setShowProfress(false);
     }
   };
 
@@ -99,6 +104,7 @@ export default function Contact() {
         </div>
         <div className="bottom">
             <form ref={form} >
+                <div className="progressBar" style={{display: showProfress && 'flex' }}></div>
                 <div className="first">
                     <div className="name">
                         <input onChange={(e) => setName(e.target.value)} value={name} name="name" className='input' id="nome" type="text" required/>

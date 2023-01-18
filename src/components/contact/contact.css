@@ -186,6 +186,26 @@
     color: #89D790;
 }
 
+.progressBar{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-left-color: #89D790;;
+    border-top-color: #89D790;;
+    border-right-color: #89D790;;
+    z-index: 9;
+    animation: rotate 0.5s infinite linear;
+    filter: drop-shadow(2px 2px 4px black);
+    display: none;
+}
+
 @media (max-width:991px) {
     .contact .bottom{
         width: 80%;
@@ -203,5 +223,14 @@
     }
     .contact .top h1{
         font-size: 40px;
+    }
+}
+
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
     }
 }
