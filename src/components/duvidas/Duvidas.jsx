@@ -7,7 +7,7 @@ import { ScrollContext } from '../../context/ScrollContext';
 export default function Duvidas() {
   const {scrollContext} = useContext(ScrollContext)
   const[pass,setPass] = useState(false);
-  if(scrollContext > 600){
+  if(scrollContext > 800){
       if(pass == false){
           setPass(true)
       }
