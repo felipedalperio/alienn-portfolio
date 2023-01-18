@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
         <div className="info">
-            <h1>Angêcia Alienn</h1>
+            <h1>Agência Alienn</h1>
             <h3>Seja Bem Vindo</h3>
             <span>
                 Agência de websites, Lutando para que seus projetos cresçam e criem vida.
