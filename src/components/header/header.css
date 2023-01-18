@@ -130,6 +130,12 @@ button .light {
     animation-fill-mode: forwards;
 }
 
+.groupButtons button .light {
+    background-color: #fff;
+    animation: lightButton2 1s;
+    animation-delay: 1s;
+}
+
 .groupButtons button:hover {
     transform: scale(1.1);
     background-color: #080c11;
@@ -488,7 +494,8 @@ button .light {
     }
 
     .header {
-        background-image: url(../../../public/images/wallpaper_mobile1.jpg);
+        background-image: linear-gradient(90deg, rgba(36, 24, 54, 0.7), transparent, rgba(58, 69, 42, 0.7)),
+            url(../../../public/images/wallpaper_mobile1.jpg);
         background-size: 100% auto;
     }
 
@@ -502,5 +509,14 @@ button .light {
 
     100% {
         transform: translateX(300px) translateY(-130px);
+    }
+}
+@keyframes lightButton2 {
+    0% {
+        transform: translateX(-80px) translateY(-20px);
+    }
+
+    100% {
+        transform: translateX(380px) translateY(-180px);
     }
 }
