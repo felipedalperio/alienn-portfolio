@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { IMaskInput } from "react-imask";
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
 
 
 export default function Contact() {
@@ -13,6 +15,48 @@ export default function Contact() {
   const[desc,setDesc] = useState("");
   const emailRef = useRef(null);
   const telRef = useRef(null);
+  const form = useRef(null);
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+    //https://www.youtube.com/watch?v=I4DKr1JLC50
+
+    if(email != "" && desc != "" && name != "" && tel != ""){
+        if(email.split("").includes("@")){
+            emailjs.sendForm('service_zlwqjiq', 'template_0yifm45', form.current, 'Odl7AKHDXonkGb0qm')
+            .then((result) => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: 'Seu email foi enviado com sucesso. Por favor aguarde, pois responderemos em breve.',
+                })
+
+                setDesc("");
+                setEmail("");
+                setName("");
+                setTel("");
+            }, (error) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Algo deu errado, Por favor tente novamente mais tarde.',
+                })
+            });
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor Digite um email valido.',
+            })
+        }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor preencha todos os campos do formulário.',
+        })
+    }
+  };
 
   useEffect(() => {
     if(email != ""){
@@ -54,26 +98,26 @@ export default function Contact() {
             <span>NOS FALE SOBRE SEU PROJETO</span>
         </div>
         <div className="bottom">
-            <form>
+            <form ref={form} >
                 <div className="first">
                     <div className="name">
-                        <input onChange={(e) => setName(e.target.value)} className='input' id="nome" type="text" required/>
-                        <label htmlFor="nome">nome</label>
+                        <input onChange={(e) => setName(e.target.value)} value={name} name="name" className='input' id="nome" type="text" required/>
+                        <label htmlFor="name">nome</label>
                     </div>
                     <div className="telefone">
-                        <IMaskInput mask="+55 (00) 00000-0000" onChange={(e) => setTel(e.target.value)} className='input' id='telefone' required/>
-                        <label htmlFor="telefone" ref={telRef}>telefone</label>
+                        <IMaskInput mask="+55 (00) 00000-0000" name="tel" autoComplete="nope" onChange={(e) => setTel(e.target.value)} value={tel} className='input' id='telefone' required/>
+                        <label htmlFor="tel" ref={telRef}>telefone</label>
                     </div>
                 </div>
-                <div className="telefone">
-                    <input onChange={(e) => setEmail(e.target.value)} className='input' id='email' type="email" required />
+                <div className="email">
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} name="email" className='input' id='email' type="email" required />
                     <label htmlFor="email" ref={emailRef}>email</label>
                 </div>
                 <div className="desc">
-                    <textarea onChange={(e) => setDesc(e.target.value)} id='desc' utocomplete="off" required />
+                    <textarea onChange={(e) => setDesc(e.target.value)} value={desc} name="desc" id='desc' utocomplete="off" required />
                     <label htmlFor="desc" >Descrição do projeto</label>
                 </div>
-                <button><AiOutlineSend size={20}/> ENVIAR</button>
+                <button onClick={sendEmail}><AiOutlineSend size={20}/> ENVIAR</button>
             </form>
         </div>
     </div>

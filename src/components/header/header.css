@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     height: calc(100vh - 80px);
-    max-height: 680px;
+    max-height: 780px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
