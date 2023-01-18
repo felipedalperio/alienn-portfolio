@@ -398,7 +398,7 @@ button .light {
 
 @media (max-width:1300px) {
     .board {
-        display: none;
+        bottom: 20px;
     }
 }
 
@@ -418,11 +418,6 @@ button .light {
         display: none;
     }
 
-    .alien {
-        right: 10px;
-        top: 20px
-    }
-
     .alien .car {
         display: none;
     }
@@ -438,6 +433,20 @@ button .light {
 
 }
 
+@media (max-width:800px) {
+    .alien{
+        display: none;
+    }
+    .info {
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        gap: 10px;
+    }
+
+}
+
 @media (max-width:761px) {
     .groupButtons {
         flex-direction: column;
@@ -450,18 +459,6 @@ button .light {
 }
 
 @media (max-width:661px) {
-    .alien {
-        display: none;
-    }
-
-    .info {
-        width: 80%;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        gap: 10px;
-    }
-
     .header {
         height: calc(90vh - 80px);
     }
