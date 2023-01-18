@@ -2,10 +2,10 @@ import './duvida.css';
 import { useEffect, useState } from 'react';
 import {IoIosArrowDown, IoIosClose} from 'react-icons/io'
 
-export default function Duvida({props}) {
+export default function Duvida({props, pass}) {
   const[show,setShow] = useState(false);
   return (
-    <div className='duvida'>
+    <div className='duvida' style={{animationName: pass && 'slashRight' }}>
             <div className="contentDuvida">
                         <div className="duvidaWrapper">
                             <div className="duvidaTitle">

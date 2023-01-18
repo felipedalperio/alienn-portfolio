@@ -6,6 +6,7 @@
     justify-content: center;
     gap: 20px;
     color: white;
+    overflow: hidden;
     background-image: linear-gradient(-150deg, #89D790 0% 10%, #c8fc9a 12% 20%, #090b13 21% 100%)
 }
 
@@ -16,6 +17,9 @@
     font-weight: 600;
     text-align: center;
     color: white;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+    transform: translateY(-400%);
     
 }
 
@@ -44,7 +48,9 @@
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: 300;
-    
+    transform: rotateX(90deg);
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
 }
 
 .infoAbout .line{
@@ -86,5 +92,51 @@
 
     .title > span:first-child{
         font-size: 40px;
+    }
+}
+
+@keyframes identifier {
+    0%{
+        color: #89D790;
+        transform: rotateX(90deg);
+        filter: blur(10px);
+    }
+    100%{
+        color: #fff;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes identifierReverse {
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes introSlash {
+    0%{
+        transform: translateY(-400%);
+    }
+    50%{
+        transform: translateY(20%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes outSlash {
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(20%);
+        animation-timing-function: linear;
+    }
+    100%{
+        transform: translateY(-400%);
     }
 }

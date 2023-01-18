@@ -9,8 +9,14 @@
 
 .left{
     flex:1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    translate: -200% 0;
 }
 
+.left img{
+    animation: floating 4s linear forwards infinite;
+}
 
 .right{
     flex:2;
@@ -18,6 +24,9 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    translate: 200% 0;
 }
 
 .right .titleDuvida{
@@ -79,5 +88,33 @@
     .right .titleDuvida > span:last-child{
         font-size: 20px;
         font-weight: 300;
+    }
+}
+
+@keyframes slashLeft {
+    0%{
+        translate: -200% 0;
+    }
+    100%{
+        translate: 0%;
+    }
+}
+@keyframes slashRight {
+    0%{
+        translate: 200% 0;
+    }
+    100%{
+        translate: 0%;
+    }
+}
+@keyframes floating {
+    0%{
+        translate: 0 10px;
+    }
+    50%{
+        translate: 0 -10px;
+    }
+    100%{
+        translate: 0 10px;
     }
 }
