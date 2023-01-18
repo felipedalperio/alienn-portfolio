@@ -137,8 +137,13 @@ button .light {
 .alien {
     position: absolute;
     right: 140px;
-    top: calc(40px);
+    top: 5%;
     animation: splashXLess 3s, alien 3s infinite 3s, pisk 1s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 
@@ -147,6 +152,7 @@ button .light {
     animation: shipAnimation 4s infinite;
     z-index: 4;
     position: relative;
+    width: 80%;
 }
 
 .alien .triangle-up {
@@ -162,7 +168,7 @@ button .light {
 }
 
 .alien .car {
-    width: 300px;
+    width: 100%;
     position: absolute;
     filter: brightness(50%) drop-shadow(4px 8px 10px rgba(173, 250, 150, 0.7));
     top: 340px;
@@ -185,16 +191,21 @@ button .light {
 
 .board {
     position: absolute;
-    bottom: 12%;
+    bottom: 40px;
     left: 200px;
     opacity: 0;
     animation: splashYLess 2s;
     animation-fill-mode: forwards;
     animation-delay: 0.3s;
+    width: 15%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
 }
 
 .board img {
-    width: 200px;
+    width: 100%;
+    object-fit: contain;
     filter: brightness(40%) drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));
     ;
     animation: pisk2 1s infinite;
@@ -202,10 +213,9 @@ button .light {
 
 .poste {
     position: absolute;
-    top: -10px;
-    right: 43%;
-    width: 15px;
-    height: 400px;
+   
+    width: 8px;
+    height: 300px;
     filter: brightness(80%) drop-shadow(8px 1px 4px rgba(173, 250, 150, 0.7));
     ;
     border-radius: 20px;
