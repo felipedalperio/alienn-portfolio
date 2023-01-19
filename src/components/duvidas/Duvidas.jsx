@@ -13,7 +13,7 @@ export default function Duvidas() {
       }
   }  
   return (
-    <div className='duvidas'>
+    <div className='duvidas' id='duvida'>
         <div className="left" style={{animationName: pass && 'slashLeft'}}>
                 <img src='./images/astronaut.webp' alt='' width={500} height={500}/>
         </div>

@@ -4,7 +4,7 @@ import {FiGithub} from 'react-icons/fi';
 
 export default function Header() {
   return (
-    <div className="header">
+    <div className="header" id="home">
         <div className="info">
             <h1>Agência Alienn</h1>
             <h3>Seja Bem Vindo</h3>

@@ -11,7 +11,7 @@ export default function About() {
       }
   }  
   return (
-    <div className='about'>
+    <div className='about' id='about'>
           <div className="title" style={{animationName: pass && 'introSlash'}}>
                 <span> <span className='greenColor'>NOSSA</span> AGÊNCIA</span>
                 <span> um pouco sobre o <span className='greenColor'>alienn</span> </span>

@@ -97,7 +97,7 @@ export default function Contact() {
     }
   },[tel])
   return (
-    <div className='contact'>
+    <div className='contact' id='contato'>
         <div className="top">
             <h1>CONTATO</h1>
             <span>NOS FALE SOBRE SEU PROJETO</span>
