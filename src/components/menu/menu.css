@@ -33,9 +33,14 @@
     font-weight: 500;
 }
 
-.menu ul li:first-child {
+.menu ul li a{
+    transition: all .4s ease;
+}
+
+.menu ul li a:hover {
     color: #89D790;
 }
+
 
 .menu .icons {
     display: flex;
@@ -168,7 +173,7 @@
     }
 
     #list{
-        top:45px;
+        top:45px
     }
     
 }

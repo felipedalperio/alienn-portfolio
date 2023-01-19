@@ -2,20 +2,33 @@ import './menu.css';
 import { FaFacebookF, FaInstagram, FaCaretDown } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { RiAliensLine } from 'react-icons/ri';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import { menu } from '../../data';
 
 export default function Menu() {
 
     const[option, setOption] = useState(0)
+    const[menuItem, setMenuItem] = useState(0)
     const[showList, setShowList] = useState(false)
     const {languageContext, setLanguageContext} = useContext(LanguageContext)
-    
+    const list = useRef(null);
+
 
     useEffect(() =>{
         setLanguageContext(option)
     },[option])
+
+    useEffect(() =>{
+        if(list){
+            
+            for(let i=0; i < 4; i++){
+                list.current.children[i].style.borderBottom = "none"; 
+            }
+           
+            list.current.children[menuItem].style.borderBottom = "2px solid #89D790"; 
+        }
+    },[menuItem])
 
     const options = [
         {
@@ -36,11 +49,11 @@ export default function Menu() {
                 <RiAliensLine />
                 <span>NN</span>
             </div>
-            <ul>
-                <li> <a href="#home">{menu[languageContext].item1}</a></li>
-                <li> <a href="#about">{menu[languageContext].item2} </a></li>
-                <li> <a href="#duvida">{menu[languageContext].item3} </a></li>
-                <li> <a href="#contato">{menu[languageContext].item4} </a></li>
+            <ul ref={list}>
+                <li onClick={() => setMenuItem(0)} ><a href="#home">{menu[languageContext].item1}</a></li>
+                <li onClick={() => setMenuItem(1)} ><a href="#about">{menu[languageContext].item2} </a></li>
+                <li onClick={() => setMenuItem(2)} ><a href="#duvida">{menu[languageContext].item3} </a></li>
+                <li onClick={() => setMenuItem(3)} ><a href="#contato">{menu[languageContext].item4} </a></li>
             </ul>
 
             <div className="selector" onClick={() => setShowList(!showList)}>
