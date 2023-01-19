@@ -40,7 +40,7 @@ export default function Vantagens() {
                             {advantage[languageContext].desc2}
                         </span>
                     </div>
-                    <span className='pilares'>  {advantage[languageContext].advantage}</span>
+                    <span className='pilares'>  {advantage[languageContext].mainAdvantage}</span>
                     <div className="optionsVantagem">
                         <button>{advantage[languageContext].buttons[0]}</button>
                         <button>{advantage[languageContext].buttons[1]}</button>

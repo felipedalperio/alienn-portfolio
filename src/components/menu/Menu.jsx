@@ -21,7 +21,7 @@ export default function Menu() {
 
     useEffect(() =>{
         if(list){
-            
+
             for(let i=0; i < 4; i++){
                 list.current.children[i].style.borderBottom = "none"; 
             }
@@ -43,7 +43,7 @@ export default function Menu() {
         },
     ]
     return (
-        <div className='menu'>
+        <div className='menu' >
             <div className="logo">
                 <span>ALIE</span>
                 <RiAliensLine />
