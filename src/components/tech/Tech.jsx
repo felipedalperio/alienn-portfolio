@@ -1,11 +1,15 @@
 import './tech.css'
 import {FaReact, FaCode, FaDatabase} from 'react-icons/fa'
+import { useContext} from 'react';
+import { LanguageContext } from '../../context/LanguageContext';
+import { tech } from '../../data';
 
 export default function Tech() {
+  const {languageContext} = useContext(LanguageContext)
   return (
     <div className='tech'>
-        <h1>Tecnologias</h1>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod illo iusto eveniet rem voluptatem maiores ratione dignissimos obcaecati alias quis molestiae saepe quasi, aperiam necessitatibus, accusamus laudantium minus laboriosam magni?</span>
+        <h1>{tech[languageContext].title}</h1>
+        <span>{tech[languageContext].desc}</span>
         <div className="wrapperTech">
             <div className="iconTech">
                 <FaReact size={40} style={{color:'#89D790'}}/>

@@ -12,7 +12,7 @@ export default function Footer() {
             </div>
             <div className="content">
                 <span>EMAIL</span>
-                <span>felipedalperio@gmail.com</span>
+                <span>aliennagencia@gmail.com</span>
             </div>
         </div>
         <div className="bottom">

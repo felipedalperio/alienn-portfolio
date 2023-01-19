@@ -1,16 +1,21 @@
 import './header.css'
 import {FaFacebookF, FaInstagram} from 'react-icons/fa';
 import {FiGithub} from 'react-icons/fi';
+import { useContext} from 'react';
+import { LanguageContext } from '../../context/LanguageContext';
+import {header} from '../../data.js'
 
 export default function Header() {
+  const {languageContext} = useContext(LanguageContext); 
   return (
     <div className="header" id="home">
         <div className="info">
-            <h1>Agência Alienn</h1>
-            <h3>Seja Bem Vindo</h3>
+            <h1>{header[languageContext].title}</h1>
+            <h3>{header[languageContext].welcom}</h3>
             <span>
-                Agência de websites, Lutando para que seus projetos cresçam e criem vida.
-                <span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis at alias soluta perspiciatis, sed vero aliquid minima.</span>    
+                {header[languageContext].desc1}
+                <br />
+                <span> {header[languageContext].desc2}</span>    
             </span>
             
             <div className="groupButtons">
@@ -25,10 +30,12 @@ export default function Header() {
                         <FiGithub/>
                     </div>
                 </div>
-                <button>
-                    <div className="light"></div>
-                    SAIBA MAIS
-                </button>
+                <a  href="#about">
+                    <button>
+                        <div className="light"></div>
+                        {header[languageContext].button}
+                    </button>
+                </a>
             </div>
         </div>
         <div className="alien">

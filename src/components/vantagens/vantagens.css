@@ -65,8 +65,20 @@
 
 .descVantagem > span{
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
+    color: #89D790;
+}
+
+.descVantagem .pilares{
+    text-align: center;
+}
+
+.infoDesc span{
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: lightgray;
 }
 
 .optionsVantagem{
@@ -74,6 +86,7 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .optionsVantagem button{
@@ -84,11 +97,22 @@
     border: 2px solid #89D790;
     border-radius: 4px;
     text-align: center;
-    width: 200px;
-    padding: 6px 0;
+    width: 45%;
+    height: 80px;
     margin-top: 20px;
     cursor: pointer;
 }
+
+.optionsVantagem button:nth-child(2){
+    background-color: #73b078;
+    color: white;
+}
+
+.optionsVantagem button:nth-child(3){
+    background-color: #73b078;
+    color: white;
+}
+
 
 @media (max-width: 991px) {
     .vantagens{
@@ -118,10 +142,6 @@
 
     .descVantagem h1{
         font-size: 30px;
-    }
-
-    .descVantagem > span{
-        font-size: 16px;
     }
 
     .optionsVantagem{
