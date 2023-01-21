@@ -20,15 +20,21 @@ export default function Header() {
             
             <div className="groupButtons">
                 <div className="icons">
-                    <div className="circleBack">
-                       <FaFacebookF />
-                    </div>
-                    <div className="circleBack">
-                        <FaInstagram />
-                    </div>
-                    <div className="circleBack">
-                        <FiGithub/>
-                    </div>
+                    <a href='https://www.facebook.com/eduardo.kd.1'>
+                        <div className="circleBack">
+                        <FaFacebookF />
+                        </div>
+                    </a>
+                    <a href='https://www.instagram.com/alienn.ofc/'>
+                        <div className="circleBack">
+                            <FaInstagram />
+                        </div>
+                    </a>
+                    <a href='https://github.com/felipedalperio'>
+                        <div className="circleBack">
+                            <FiGithub/>
+                        </div>
+                    </a>
                 </div>
                 <a  href="#about">
                     <button>

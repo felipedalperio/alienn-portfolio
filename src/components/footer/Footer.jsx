@@ -18,18 +18,24 @@ export default function Footer() {
         <div className="bottom">
             <span>Sonhe e viva, Pense e cria.</span>
             <div className="iconsFooter">
-                <div className="circle">
-                    <div className="light"></div>
-                    <FaFacebookF size={20}/>
-                </div>
-                <div className="circle">
-                    <div className="light"></div>
-                    <FaInstagram size={20}/>
-                </div>
-                <div className="circle">
-                    <div className="light"></div>
-                    <FiGithub size={20}/>
-                </div>
+                <a href='https://www.facebook.com/eduardo.kd.1'>
+                    <div className="circle">
+                        <div className="light"></div>
+                        <FaFacebookF size={20}/>
+                    </div>
+                </a>
+                <a href='https://www.instagram.com/alienn.ofc/'>
+                    <div className="circle">
+                        <div className="light"></div>
+                        <FaInstagram size={20}/>
+                    </div>
+                </a>
+                <a href='https://github.com/felipedalperio'>
+                    <div className="circle">
+                        <div className="light"></div>
+                        <FiGithub size={20}/>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
