@@ -2,7 +2,7 @@ export const menu = [
     {
         item1: 'HOME',
         item2: 'SOBRE',
-        item3: 'DUVIDA',
+        item3: 'DÚVIDA',
         item4: 'CONTATO',
     },
     {
@@ -18,7 +18,7 @@ export const duvida = [
         {
             title: 'COMO ',
             title2: 'FUNCIONA ?',
-            desc: ['estão aqui as', 'duvidas ', 'mais', 'frequentes'],
+            desc: ['estão aqui as', 'dúvidas ', 'mais', 'frequentes'],
         },
         [
             {
