@@ -50,7 +50,7 @@ export const duvida = [
                         text: 'Nossa agência não possui um valor fixo para realizar um projeto.'
                     },
                     {
-                        text: 'O cliente devera preencher o formulário de contato que se encontra no final desta página e explicar os detalhes do projeto a ser realizado. Nossa equipe fara uma avaliação para saber todos os recursos necessários para o desenvolvimento e futuramente enviar o orçamento para cliente.'
+                        text: 'O cliente deverá preencher o formulário de contato que se encontra no final desta página e explicar os detalhes do projeto a ser realizado. Nossa equipe fara uma avaliação para saber todos os recursos necessários para o desenvolvimento e futuramente enviar o orçamento para cliente.'
                     },
                 ]
             },
