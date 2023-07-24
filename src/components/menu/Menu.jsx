@@ -4,44 +4,32 @@ import { FiGithub } from 'react-icons/fi';
 import { RiAliensLine } from 'react-icons/ri';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
-import { menu } from '../../data';
+import { flags, menu } from '../../data';
 
 export default function Menu() {
 
-    const[option, setOption] = useState(0)
-    const[menuItem, setMenuItem] = useState(0)
-    const[showList, setShowList] = useState(false)
-    const {languageContext, setLanguageContext} = useContext(LanguageContext)
+    const [option, setOption] = useState(0)
+    const [menuItem, setMenuItem] = useState(0)
+    const [showList, setShowList] = useState(false)
+    const { languageContext, setLanguageContext } = useContext(LanguageContext)
     const list = useRef(null);
 
 
-    useEffect(() =>{
+    useEffect(() => {
         setLanguageContext(option)
-    },[option])
+    }, [option])
 
-    useEffect(() =>{
-        if(list){
+    useEffect(() => {
+        if (list) {
 
-            for(let i=0; i < 4; i++){
-                list.current.children[i].style.borderBottom = "none"; 
+            for (let i = 0; i < 4; i++) {
+                list.current.children[i].style.borderBottom = "none";
             }
-           
-            list.current.children[menuItem].style.borderBottom = "2px solid #89D790"; 
-        }
-    },[menuItem])
 
-    const options = [
-        {
-            img: <img src='./images/brazil.png' width={20} height={20} />,
-            name: 'BRA',
-            lang: 'pt-br'
-        },
-        {
-            img: <img src='/images/USA.png' width={20} height={20} />,
-            name: 'USA',
-            lang: 'en-us'
-        },
-    ]
+            list.current.children[menuItem].style.borderBottom = "2px solid #89D790";
+        }
+    }, [menuItem])
+
     return (
         <div className='menu' >
             <div className="logo">
@@ -58,21 +46,24 @@ export default function Menu() {
 
             <div className="selector" onClick={() => setShowList(!showList)}>
                 <div className="selectField">
-                    <p> {options[option].img} {options[option].name} <p>{options[option].lang}</p></p>
+                    <p> {flags[option].img} {flags[option].name} <p>{flags[option].lang}</p></p>
                     <FaCaretDown />
                 </div>
-                <ul id='list' style={{height: showList ? 'auto' : '0'}}>
-                    <li className='options' onClick={() => setOption(0)} style={{color: option == 0 ? '#89D790' : '#fff'}} >
-                        <p>BRA</p>
-                        <img src='./images/brazil.png' width={20} height={20} />
-                    </li>
-                    <li className='options' onClick={() => setOption(1)} style={{color: option == 1 ? '#89D790' : '#fff'}}>
-                        <p>USA</p>
-                        <img src='./images/USA.png' width={20} height={20} />
-                    </li>
+                <ul id='list' style={{ height: showList ? 'auto' : '0' }}>
+                    {flags.map((item, key) => (
+                        <li
+                            className='options'
+                            onClick={() => setOption(key)}
+                            key={key}
+                            style={{ color: option == key ? '#89D790' : '#fff' }}>
+                            <p>{item.name}</p>
+                            <img src={item.imgUrl} width={20} height={20} alt={item.imgUrl}/>
+                        </li>
+                    ))}
+
                 </ul>
             </div>
-            
+
 
         </div>
     )

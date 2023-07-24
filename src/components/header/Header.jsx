@@ -3,15 +3,17 @@ import {FaFacebookF, FaInstagram} from 'react-icons/fa';
 import {FiGithub} from 'react-icons/fi';
 import { useContext} from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
-import {header} from '../../data.js'
+import {header, links} from '../../data.js'
 
 export default function Header() {
   const {languageContext} = useContext(LanguageContext); 
+
+  //https://pixy.org/download/203743/
   return (
     <div className="header" id="home">
         <div className="info">
             <h1>{header[languageContext].title}</h1>
-            <h3>{header[languageContext].welcom}</h3>
+            <span className='subTitle'>{header[languageContext].welcom}</span>
             <span>
                 {header[languageContext].desc1}
                 <br />
@@ -20,18 +22,18 @@ export default function Header() {
             
             <div className="groupButtons">
                 <div className="icons">
-                    <a href='https://www.facebook.com/eduardo.kd.1'>
+                    <a href={links.facebook} title="Facebook">
                         <div className="circleBack">
                         <FaFacebookF />
                         </div>
                     </a>
-                    <a href='https://www.instagram.com/alienn.ofc/'>
+                    <a href={links.instagram} title="Instragram">
                         <div className="circleBack">
                             <FaInstagram />
                         </div>
                     </a>
-                    <a href='https://github.com/felipedalperio'>
-                        <div className="circleBack">
+                    <a href={links.github}>
+                        <div className="circleBack" title="Github">
                             <FiGithub/>
                         </div>
                     </a>

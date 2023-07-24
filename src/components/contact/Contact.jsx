@@ -107,20 +107,20 @@ export default function Contact() {
                 <div className="progressBar" style={{display: showProfress && 'flex' }}></div>
                 <div className="first">
                     <div className="name">
-                        <input onChange={(e) => setName(e.target.value)} value={name} name="name" className='input' id="nome" type="text" required/>
+                        <input onChange={(e) => setName(e.target.value)} value={name} name="name" className='input' id="nome" type="text" required placeholder=''/>
                         <label htmlFor="name">{contact[languageContext].name}</label>
                     </div>
                     <div className="telefone">
-                        <IMaskInput mask="+55 (00) 00000-0000" name="tel" autoComplete="nope" onChange={(e) => setTel(e.target.value)} value={tel} className='input' id='telefone' required/>
+                        <IMaskInput mask="+55 (00) 00000-0000" name="tel" autoComplete="nope" onChange={(e) => setTel(e.target.value)} value={tel} className='input' id='telefone' required placeholder=''/>
                         <label htmlFor="tel" ref={telRef}>{contact[languageContext].tel}</label>
                     </div>
                 </div>
                 <div className="email">
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} name="email" className='input' id='email' type="email" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} name="email" className='input' id='email' type="email" required placeholder=''/>
                     <label htmlFor="email" ref={emailRef}>{contact[languageContext].email}</label>
                 </div>
                 <div className="desc">
-                    <textarea onChange={(e) => setDesc(e.target.value)} value={desc} name="desc" id='desc' utocomplete="off" required />
+                    <textarea onChange={(e) => setDesc(e.target.value)} value={desc} name="desc" id='desc' utocomplete="off" required placeholder=''/>
                     <label htmlFor="desc" >{contact[languageContext].desc}</label>
                 </div>
                 <button onClick={sendEmail}><AiOutlineSend size={20}/> {contact[languageContext].button}</button>

@@ -7,7 +7,7 @@
     gap: 20px;
     color: white;
     overflow: hidden;
-    background-image: linear-gradient(-150deg, #89D790 0% 10%, #c8fc9a 12% 20%, #090b13 21% 100%)
+    background-image: linear-gradient(-150deg, rgb(137, 215, 144, 0.7) 0% 10%, rgb(200, 252, 154,0.7) 12% 20%, #090b13 21% 100%)
 }
 
 .title{
@@ -62,7 +62,7 @@
 
 @media (max-width:991px) {
     .about {
-        background-image: linear-gradient(-150deg, #89D790 0% 5%, #c8fc9a 6% 10%, #090b13 11% 100%);
+        background-image: linear-gradient(-150deg, rgb(137, 215, 144, 0.7)  0% 5%, rgb(200, 252, 154,0.7) 6% 10%, #090b13 11% 100%);
         padding: 80px 0;
     }
 
