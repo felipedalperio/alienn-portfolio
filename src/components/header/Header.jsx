@@ -47,14 +47,14 @@ export default function Header() {
             </div>
         </div>
         <div className="alien">
-             <img className="spaceship" src="./images/alien.png" alt=""/>
+             <img className="spaceship" src="./images/alien.png" alt="" width="fit-content" height="fit-content"/>
              <div className="triangle-up"></div>
              <div className="circle"></div>
              <img className="car" src="./images/car2.webp" alt=""/>
         </div>
         <div className="board">
             <div className="poste"></div>
-            <img src="./images/placa.png" alt=""/>
+            <img src="./images/placa.png" alt="" width="fit-content" height="fit-content"/>
         </div>
     </div>
   )
