@@ -161,6 +161,9 @@ button .light {
     z-index: 4;
     position: relative;
     width: 80%;
+    object-fit: contain;
+    max-width: 400px; 
+    max-height: 400px
 }
 
 .alien .triangle-up {
@@ -207,6 +210,8 @@ button .light {
     animation-delay: 0.3s;
     width: 15%;
     height: 25%;
+    max-height: 350px;
+    max-width: 350px;
     display: flex;
     filter: brightness(80%);
     justify-content: center;

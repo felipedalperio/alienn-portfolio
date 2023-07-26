@@ -88,7 +88,7 @@
     cursor: pointer;
 }
 
-.selectField p {
+.selectField div {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -96,10 +96,10 @@
     font-weight: 700;
 }
 
-.selectField p img{
+.selectField div img{
     margin-top: 1px;
 }
-.selectField p p{
+.selectField div p{
     font-size: 10px;
     margin-top: 20px;
     margin-left: 10px;
@@ -159,10 +159,10 @@
     .menu .logo{
         font-size: 30px;
     }
-    .selectField p {
+    .selectField div {
         font-size: 14px;
     }
-    .selectField p p {
+    .selectField div p {
         font-size: 10px;
     }
 

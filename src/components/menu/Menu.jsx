@@ -46,7 +46,9 @@ export default function Menu() {
 
             <div className="selector" onClick={() => setShowList(!showList)}>
                 <div className="selectField">
-                    <p> {flags[option].img} {flags[option].name} <p>{flags[option].lang}</p></p>
+                    <div> 
+                        {flags[option].img} {flags[option].name} <p>{flags[option].lang}</p> 
+                    </div>
                     <FaCaretDown />
                 </div>
                 <ul id='list' style={{ height: showList ? 'auto' : '0' }}>
