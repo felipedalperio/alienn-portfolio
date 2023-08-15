@@ -18,84 +18,6 @@ export default function Contact() {
   const form = useRef(null);
   const {languageContext} = useContext(LanguageContext)
   
-  const sendEmail = (e) => {
-    e.preventDefault();
-    //https://www.youtube.com/watch?v=I4DKr1JLC50
-    setShowProfress(true);
-    if(email != "" && desc != "" && name != "" && tel != ""){
-        if(email.split("").includes("@")){
-            emailjs.sendForm('service_zlwqjiq', 'template_0yifm45', form.current, 'Odl7AKHDXonkGb0qm')
-            .then((result) => {
-                Swal.fire({
-                    icon: 'success',
-                    title: contact[languageContext].sucessTitle,
-                    text: contact[languageContext].sucess,
-                })
-
-                setDesc("");
-                setEmail("");
-                setName("");
-                setTel("");
-                setShowProfress(false);
-            }, (error) => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: contact[languageContext].error,
-                })
-                setShowProfress(false);
-            });
-        }else{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: contact[languageContext].emailError,
-            })
-            setShowProfress(false);
-        }
-    }else{
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: contact[languageContext].empity,
-        })
-        setShowProfress(false);
-    }
-  };
-
-  useEffect(() => {
-    if(email != ""){
-        if(!email.split("").includes("@")){
-            emailRef.current.style = `
-                transform: translateY(-50%) scale(0.8); 
-                top: 0%; 
-                background-color: #090b13;
-                padding: 0 .2em;
-                color: #f14f4a;
-            `;
-        }else{
-            emailRef.current.style = `
-                color: #89D790;
-            `;
-        }
-    }
-  },[email])
-
-  useEffect(() => {
-    if(tel != ""){
-        if(tel.length < 19){
-            if(telRef){
-                telRef.current.style = `
-                    color: #f14f4a;
-                `;
-            }
-        }else{
-            telRef.current.style = `
-                color: #89D790;
-            `; 
-        }
-    }
-  },[tel])
   return (
     <div className='contact' id='contato'>
         <div className="top">
@@ -116,14 +38,14 @@ export default function Contact() {
                     </div>
                 </div>
                 <div className="email">
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} name="email" className='input' id='email' type="email" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} name="email" className='input' id='email' type="text" required />
                     <label htmlFor="email" ref={emailRef}>{contact[languageContext].email}</label>
                 </div>
                 <div className="desc">
                     <textarea onChange={(e) => setDesc(e.target.value)} value={desc} name="desc" id='desc' utocomplete="off" required/>
                     <label htmlFor="desc" >{contact[languageContext].desc}</label>
                 </div>
-                <button onClick={sendEmail}><AiOutlineSend size={20}/> {contact[languageContext].button}</button>
+                <button><AiOutlineSend size={20}/> {contact[languageContext].button}</button>
             </form>
         </div>
     </div>

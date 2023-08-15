@@ -162,6 +162,7 @@ button .light {
     position: relative;
     width: 80%;
     object-fit: contain;
+
 }
 
 .alien .triangle-up {
@@ -211,6 +212,7 @@ button .light {
     display: flex;
     filter: brightness(80%);
     justify-content: center;
+    
 }
 
 .board img {
